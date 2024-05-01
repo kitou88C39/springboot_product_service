@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.testcontainers.containers.MongoDBContainer;
 import org.testcontainers.utility.DockerImageName;
 
+import com.techie.microservices.product.ProductServiceApplication;
+
 @TestConfiguration(proxyBeanMethods = false)
 public class TestProductServiceApplication {
 

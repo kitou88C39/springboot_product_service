@@ -1,8 +1,9 @@
-package com.techie.microservices.productservice.controller;
+package com.techie.microservices.product.controller;
 
-import com.techie.microservices.productservice.dto.ProductRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import com.techie.microservices.product.dto.ProductRequest;
 
 @RestController
 @RequestMapping("/api/product")
