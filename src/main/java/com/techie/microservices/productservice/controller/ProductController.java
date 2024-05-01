@@ -1,6 +1,6 @@
 package com.techie.microservices.productservice.controller;
 
-import com.techie.microservices.product.dto.ProductRequest;
+import com.techie.microservices.productservice.dto.ProductRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
