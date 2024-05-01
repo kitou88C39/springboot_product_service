@@ -1,5 +1,6 @@
 package com.techie.microservices.productservice.controller;
 
+import com.techie.microservices.product.dto.ProductRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +11,6 @@ public class ProductController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-
     public void createProduct(@RequestBody ProductRequest productRequest) {
 
     }
