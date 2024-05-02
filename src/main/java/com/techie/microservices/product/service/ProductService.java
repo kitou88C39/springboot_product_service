@@ -18,12 +18,12 @@ public class ProductService {
 
     public ProductResponse createProduct(ProductRequest productRequest) {
         Product product = Product.builder()
-        .name(productRequest.name())
-        .description(productRequest.description())
-        .price(productRequest.price())
-        .build();
+                .name(productRequest.name())
+                .description(productRequest.description())
+                .price(productRequest.price())
+                .build();
         productRepository.save(product);
-        log.info('Product created successfully');
+        log.info("Product created successfully");
         return new ProductResponse(product.getId(), product.getName(), product.getDescription(), product.getPrice());
     }
 
