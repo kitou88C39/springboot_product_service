@@ -29,5 +29,7 @@ public class ProductService {
 
     public List<ProductResponse> getAllProducts() {
         return productRepository.findAll();
+        .stream()
+        .map(product -> new ProductResponse(product.id(), product.name(), product.description(), product.price()))
     }
 }
