@@ -23,4 +23,8 @@ public class ProductService {
         log.info('Product created successfully');
         return product;
     }
+
+    public List<Product> getAllProducts() {
+        return null;
+    }
 }
