@@ -13,7 +13,11 @@ public class ProductService {
 
     public void createProduct(ProductRequest productRequest) {
         Product product = Product.builder()
-            .name(ProductRequest.name())
+                .name(ProductRequest.name())
+                .description(ProductRequest.description())
+                .price(ProductRequest.price())
+                .build();
+        productRepository.save(product);
 
     }
 }
