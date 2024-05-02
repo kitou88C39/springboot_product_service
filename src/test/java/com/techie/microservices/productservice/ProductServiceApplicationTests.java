@@ -7,7 +7,7 @@ import org.testcontainers.containers.MongoDBContainer;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ProductServiceApplicationTests {
 
-	static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo")
+	static MongoDBContainer mongoDBContainer = new MongoDBContainer("mango:7.0.5");
 
 	@Test
 	void shouldCreateProduct() {
