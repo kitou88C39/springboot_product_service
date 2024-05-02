@@ -1,5 +1,7 @@
 package com.techie.microservices.productservice;
 
+import static org.mockito.ArgumentMatchers.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -36,6 +38,14 @@ class ProductServiceApplicationTests {
 					"price": 1000
 				}
 				""";
-	}
-
+	
+	RestAssured.given()
+	.contentType("application/json")
+	.body(requestBody)
+	.when()
+	.post("/api/product")
+	.then()
+	.statusCode(201)
+	.body("id",.notNullValue())
+}
 }
