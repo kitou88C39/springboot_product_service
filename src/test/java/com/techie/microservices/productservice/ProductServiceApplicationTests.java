@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.testcontainers.containers.MongoDBContainer;
 
 import io.restassured.RestAssured;
@@ -11,6 +12,7 @@ import io.restassured.RestAssured;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ProductServiceApplicationTests {
 
+	@ServiceConnection
 	static MongoDBContainer mongoDBContainer = new MongoDBContainer("mango:7.0.5");
 	@LocalServerPort
 	private integer port;
@@ -21,8 +23,19 @@ class ProductServiceApplicationTests {
 		RestAssured.port = port;
 	}
 
+	static {
+		mongoDBContainer.start();
+	}
+
 	@Test
 	void shouldCreateProduct() {
+		String getRequestBody = """
+				{
+					"name": "iPhone 15",
+					"description": "iPhone 15 is a smartphone from Apple",
+					"price": 1000
+				}
+				""";
 	}
 
 }
