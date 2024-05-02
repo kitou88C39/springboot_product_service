@@ -1,5 +1,7 @@
 package com.techie.microservices.product.dto;
 
-public class ProductResponse {
+import java.math.BigDecimal;
+
+public record ProductResponse(String id, String name, String description, BigDecimal price) {
 
 }
