@@ -18,7 +18,7 @@ class ProductServiceApplicationTests {
 	@ServiceConnection
 	static MongoDBContainer mongoDBContainer = new MongoDBContainer("mango:7.0.5");
 	@LocalServerPort
-	private integer port;
+	private int port;
 
 	@BeforeEach
 	void setup() {
@@ -32,11 +32,11 @@ class ProductServiceApplicationTests {
 
 	@Test
 	void shouldCreateProduct() {
-		String getRequestBody = """
+		String requestBody = """
 				{
-					"name": "iPhone 15",
-					"description": "iPhone 15 is a smartphone from Apple",
-					"price": 1000
+				    "name": "iPhone 15",
+				    "description": "iPhone 15 is a smartphone from Apple",
+				    "price": 1000
 				}
 				""";
 
