@@ -1,6 +1,7 @@
 package com.techie.microservices.product.service;
 
 import com.techie.microservices.product.dto.ProductRequest;
+import com.techie.microservices.product.dto.ProductResponse;
 import com.techie.microservices.product.model.Product;
 import com.techie.microservices.product.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,16 +18,16 @@ public class ProductService {
 
     public Product createProduct(ProductRequest productRequest) {
         Product product = Product.builder()
-                .name(ProductRequest.name())
-                .description(ProductRequest.description())
-                .price(ProductRequest.price())
-                .build();
+        .name(productRequest.name())
+        .description(productRequest.description())
+        .price(productRequest.price())
+        .build();
         productRepository.save(product);
         log.info('Product created successfully');
         return product;
     }
 
-    public List<Product> getAllProducts() {
+    public List<ProductResponse> getAllProducts() {
         return productRepository.findAll();
     }
 }
